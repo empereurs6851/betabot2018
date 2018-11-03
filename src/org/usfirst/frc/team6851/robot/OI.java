@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 import org.usfirst.frc.team6851.robot.commands.CancelAllCommandsCommand;
 import org.usfirst.frc.team6851.robot.commands.claw.DescendrePelle;
-import org.usfirst.frc.team6851.robot.commands.claw.SetGrabber;
 //import org.usfirst.frc.team6851.robot.commands.claw.SetGrabberDown;
 import org.usfirst.frc.team6851.robot.commands.claw.MonterPelle;
 import org.usfirst.frc.team6851.robot.commands.driving.SmashTheWallForJohn;

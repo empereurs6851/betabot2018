@@ -15,7 +15,7 @@ public class AutoBSwitchSideThenPCZone extends AutonomousCommand {
 		double angleFactor = angleReversed ? -1 : 1; 
 
 		addSequential(new FirstDelay());
-		addSequential(new MoveDistance(10*12 - Constant.ROBOT_SIZE_Y, MoveSpeedFast));
+//		addSequential(new MoveDistance(10*12 - Constant.ROBOT_SIZE_Y, MoveSpeedFast));
 
 		addSequential(new SmashTheWallForJohn());
 		addSequential(new MonterPelle());

@@ -3,7 +3,6 @@ package org.usfirst.frc.team6851.robot;
 import org.usfirst.frc.team6851.robot.commands.CommandBase;
 import org.usfirst.frc.team6851.robot.commands.autonomous.*;
 import org.usfirst.frc.team6851.robot.commands.claw.ForceRaiseGrabber;
-import org.usfirst.frc.team6851.robot.commands.oldAuto.AutoDance;
 import org.usfirst.frc.team6851.robot.subsystems.DriveBase;
 import org.usfirst.frc.team6851.robot.utils.SmarterDashboard;
 
@@ -93,8 +92,8 @@ public class Dashboard {
 	*/	
 		
 		
-		SmartDashboard.putNumber("Left Motor Encoder", drivebase.getLeftEncoderDistance() / Constant.ENCODER_ROTATION_PER_INCH);
-		SmartDashboard.putNumber("Right Motor Encoder", drivebase.getRightEncoderDistance() / Constant.ENCODER_ROTATION_PER_INCH);
+//		SmartDashboard.putNumber("Left Motor Encoder", drivebase.getLeftEncoderDistance() / Constant.ENCODER_ROTATION_PER_INCH);
+//		SmartDashboard.putNumber("Right Motor Encoder", drivebase.getRightEncoderDistance() / Constant.ENCODER_ROTATION_PER_INCH);
 
 		
 		

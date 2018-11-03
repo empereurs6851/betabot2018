@@ -1,6 +1,5 @@
 package org.usfirst.frc.team6851.robot.commands.oldAuto;
 
-import org.usfirst.frc.team6851.robot.Constant;
 import org.usfirst.frc.team6851.robot.commands.claw.MonterPelle;
 import org.usfirst.frc.team6851.robot.commands.driving.MoveDistance;
 import org.usfirst.frc.team6851.robot.commands.driving.MoveUntilNearWall;
@@ -14,7 +13,7 @@ public class AutoCenterSwitchSideTight extends AutonomousCommand {
 		addSequential(new TurnRobotCommand(-20 * angleFactor, MoveSpeedFast));
 		addSequential(new MoveDistance(10*12, MoveSpeedFast));
 		addSequential(new TurnRobotCommand(20 * angleFactor, MoveSpeedFast));
-		addSequential(new MoveUntilNearWall(Constant.BUMPER_PROFONDEUR, MoveSpeedFast));
+//		addSequential(new MoveUntilNearWall(Constant.BUMPER_PROFONDEUR, MoveSpeedFast));
 
 		addSequential(new MonterPelle());
 		
