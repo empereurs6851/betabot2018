@@ -3,7 +3,6 @@ package org.usfirst.frc.team6851.robot;
 import org.usfirst.frc.team6851.robot.commands.CommandBase;
 import org.usfirst.frc.team6851.robot.commands.autonomous.*;
 import org.usfirst.frc.team6851.robot.commands.claw.ForceRaiseGrabber;
-import org.usfirst.frc.team6851.robot.commands.oldAuto.AutoDance;
 import org.usfirst.frc.team6851.robot.subsystems.DriveBase;
 import org.usfirst.frc.team6851.robot.utils.SmarterDashboard;
 
@@ -84,17 +83,17 @@ public class Dashboard {
 		SmartDashboard.putBoolean("navx isCalibrating", drivebase.isCalibrating());
 		SmartDashboard.putBoolean("Navx Angle Correction", drivebase.correctOrientationWithNavx);
 		
-
+/*
 		SmartDashboard.putNumber("Screw Height", CommandBase.grabber.getScrewHeight());
 
 		SmartDashboard.putBoolean("Limite switch lower", CommandBase.grabber.getLowerLimitSwitch());
 		SmartDashboard.putBoolean("Limite switch upper", CommandBase.grabber.getUpperLimitSwitch());
 		SmartDashboard.putBoolean("Limite switch powercube", CommandBase.grabber.getPowerCube());
+	*/	
 		
 		
-		
-		SmartDashboard.putNumber("Left Motor Encoder", drivebase.getLeftEncoderDistance() / Constant.ENCODER_ROTATION_PER_INCH);
-		SmartDashboard.putNumber("Right Motor Encoder", drivebase.getRightEncoderDistance() / Constant.ENCODER_ROTATION_PER_INCH);
+//		SmartDashboard.putNumber("Left Motor Encoder", drivebase.getLeftEncoderDistance() / Constant.ENCODER_ROTATION_PER_INCH);
+//		SmartDashboard.putNumber("Right Motor Encoder", drivebase.getRightEncoderDistance() / Constant.ENCODER_ROTATION_PER_INCH);
 
 		
 		

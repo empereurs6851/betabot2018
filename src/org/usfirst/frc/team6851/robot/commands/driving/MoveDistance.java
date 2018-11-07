@@ -13,7 +13,7 @@ public class MoveDistance extends CommandBase {
 	public MoveDistance(double distanceInInch, double speed) {
 		requires(driveBase);
 		this.speed = speed;
-		this.distanceInRotation = distanceInInch * Constant.ENCODER_ROTATION_PER_INCH;
+		this.distanceInRotation = 0; //distanceInInch * Constant.ENCODER_ROTATION_PER_INCH;
 	}
 	
 	@Override
