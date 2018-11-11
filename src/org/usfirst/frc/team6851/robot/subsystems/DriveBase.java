@@ -57,6 +57,8 @@ public class DriveBase extends SubsystemBase {
 	public void drive(double moveValue, double rotateValue) {
 		SmartDashboard.putBoolean("correctOrientationWithNavx", correctOrientationWithNavx);
 		//System.out.println("Je resoir de " + moveValue + ", " + rotateValue);
+		
+		//TODO JP : Try to use NavX here
 		if (correctOrientationWithNavx)
 			rotateValue = correctRotationWithEncoders(moveValue, rotateValue);
 		drive.arcadeDrive(moveValue, rotateValue);
@@ -183,4 +185,17 @@ public class DriveBase extends SubsystemBase {
 			return false;
 	}
 
+	public double getDisplacementX() {
+		if (navx != null)	
+			return navx.getDisplacementX();
+		else
+			return 0;
+		}
+	
+	public double getDisplacementY() {
+		if (navx != null)	
+			return navx.getDisplacementY();	
+		else
+			return 0;
+		}
 }

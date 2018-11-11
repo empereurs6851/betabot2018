@@ -83,6 +83,9 @@ public class Dashboard {
 		SmartDashboard.putBoolean("navx isCalibrating", drivebase.isCalibrating());
 		SmartDashboard.putBoolean("Navx Angle Correction", drivebase.correctOrientationWithNavx);
 		
+		SmartDashboard.putNumber("Displacement X", drivebase.getDisplacementX());
+		SmartDashboard.putNumber("Displacement Y", drivebase.getDisplacementY());
+		
 /*
 		SmartDashboard.putNumber("Screw Height", CommandBase.grabber.getScrewHeight());
 
