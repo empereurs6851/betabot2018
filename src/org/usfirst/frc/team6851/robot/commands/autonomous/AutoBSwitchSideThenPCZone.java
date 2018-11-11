@@ -4,6 +4,9 @@ import org.usfirst.frc.team6851.robot.Constant;
 import org.usfirst.frc.team6851.robot.commands.FirstDelay;
 import org.usfirst.frc.team6851.robot.commands.SecondDelay;
 import org.usfirst.frc.team6851.robot.commands.claw.MonterPelle;
+import org.usfirst.frc.team6851.robot.commands.claw.DescendrePelle;
+import org.usfirst.frc.team6851.robot.commands.claw.AvancerPelle;
+import org.usfirst.frc.team6851.robot.commands.claw.ReculerPelle;
 import org.usfirst.frc.team6851.robot.commands.driving.MoveDistance;
 import org.usfirst.frc.team6851.robot.commands.driving.SmashTheWallForJohn;
 import org.usfirst.frc.team6851.robot.commands.driving.TurnRobotCommand;
@@ -15,7 +18,11 @@ public class AutoBSwitchSideThenPCZone extends AutonomousCommand {
 		double angleFactor = angleReversed ? -1 : 1; 
 
 		addSequential(new FirstDelay());
-//		addSequential(new MoveDistance(10*12 - Constant.ROBOT_SIZE_Y, MoveSpeedFast));
+		addSequential(new AvancerPelle());
+		addSequential(new MonterPelle());
+		addSequential(new ReculerPelle());
+		addSequential(new DescendrePelle());
+		addSequential(new MoveDistance(10*12 - Constant.ROBOT_SIZE_Y, MoveSpeedFast));
 
 		addSequential(new SmashTheWallForJohn());
 		addSequential(new MonterPelle());
