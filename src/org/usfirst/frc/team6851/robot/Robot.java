@@ -42,7 +42,7 @@ public class Robot extends TimedRobot {
 		oi = new OI();
 		Dashboard.init();
 		SystemCheckUp.init();
-		CameraServer.getInstance().startAutomaticCapture();
+		//CameraServer.getInstance().startAutomaticCapture();
 	}
 
 	/**
@@ -78,23 +78,24 @@ public class Robot extends TimedRobot {
 
 	private void CheckDriverData() {
 		String gameData = DriverStation.getInstance().getGameSpecificMessage().toUpperCase();
-		if (gameData.length() > 0) {
-			GotGameData = true;
+		
+		if (gameData.length() > 0) { 
+			GotGameData = true; 
 			Colorize();
-			if (gameData.equals("LLL")) {
+			if (gameData.equals("A")) {
 				autonomousCommand = Dashboard.LLLChooser.getSelected();		
 				FirstDelay.Delay = Dashboard.LLLFirstDelay;
 				SecondDelay.Delay = Dashboard.LLLSecondDelay;
 				
-			} else if(gameData.equals("LRL")) {
+			} else if(gameData.equals("B")) {
 				autonomousCommand = Dashboard.LRLChooser.getSelected();	
 				FirstDelay.Delay = Dashboard.LRLFirstDelay;
 				SecondDelay.Delay = Dashboard.LRLSecondDelay;
-			} else if(gameData.equals("RRR")) {
+			} else if(gameData.equals("C")) {
 				autonomousCommand = Dashboard.RRRChooser.getSelected();
 				FirstDelay.Delay = Dashboard.RRRFirstDelay;
 				SecondDelay.Delay = Dashboard.RRRSecondDelay;
-			} else if(gameData.equals("RLR")) {
+			} else if(gameData.equals("D")) {
 				autonomousCommand = Dashboard.RLRChooser.getSelected();	
 				FirstDelay.Delay = Dashboard.RLRFirstDelay;
 				SecondDelay.Delay = Dashboard.RLRSecondDelay;
@@ -103,7 +104,12 @@ public class Robot extends TimedRobot {
 			} 
 		} 
 		
+		autonomousCommand = Dashboard.RLRChooser.getSelected();	
+		FirstDelay.Delay = Dashboard.RLRFirstDelay;
+		SecondDelay.Delay = Dashboard.RLRSecondDelay;
+		
 		if (autonomousCommand != null) {
+			System.out.println("AutonomousStart");
 			autonomousCommand.start();
 		}
 	}

@@ -22,7 +22,7 @@ public class AutoBSwitchSideThenPCZone extends AutonomousCommand {
 		addSequential(new MonterPelle());
 		addSequential(new ReculerPelle());
 		addSequential(new DescendrePelle());
-		addSequential(new MoveDistance(10*12 - Constant.ROBOT_SIZE_Y, MoveSpeedFast));
+		//addSequential(new MoveDistance(10*12 - Constant.ROBOT_SIZE_Y, MoveSpeedFast));
 
 		addSequential(new SmashTheWallForJohn());
 		addSequential(new MonterPelle());

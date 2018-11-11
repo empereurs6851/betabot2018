@@ -135,7 +135,7 @@ public class OI {
 	
 	public double getTurnSpeed() {
 		
-		double speed = rotateInput.getInput();
+		double speed = rotateInput.getInput()*-1;
 		speed = Math.signum(speed) * speed * speed; // Control of the speed from a linear to a exponential curve.
 		
 		return speed*driveSpeedFactor;

@@ -37,7 +37,7 @@ public class Dashboard {
 		SmartDashboard.putData("Auto LLL mode", LLLChooser);
 		SmartDashboard.putData("Auto RRR mode", RRRChooser);
 	
-		AddToAutos("Move To Center Carrot", new AutoMoveToCenterCarrot(false));
+		AddDefaultToAutos("Move To Center Carrot", new AutoMoveToCenterCarrot(false));
 /*
 		AddToAutos("An-Side go to Switch throw near", new AutoASwitchNearThenPCZone(false));
 		AddToAutos("Am-Side go to Switch throw in middle", new AutoASwitchCenter(false));

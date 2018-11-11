@@ -25,6 +25,9 @@ public class MoveDistanceNavX extends CommandBase {
 	protected void initialize() {
 		Dashboard.nextAutonomousStep();
 		super.initialize();
+		
+		driveBase.resetNavX();
+		
 		//this.distanceAtInitX = driveBase.getDisplacementX();
 		//this.distanceAtInitY = driveBase.getDisplacementY();
 		this.orientationAtInit = driveBase.getOrientation();
@@ -38,11 +41,12 @@ public class MoveDistanceNavX extends CommandBase {
 	}
 	@Override
 	protected boolean isFinished() {
-		double diff = driveBase.getOrientation() - this.orientationAtInit;
-		if(Math.abs(diff) > 0.1) {
-			System.out.println("DRIFT !");
-			driveBase.drive(0, diff);
-		}
+//		double diff = driveBase.getOrientation() - this.orientationAtInit;
+//		if(Math.abs(diff) > 0.1) {
+//			System.out.println("DRIFT !");
+//			driveBase.drive(0, diff);
+//		}
+		
 		if(mouvementMask == 1) {
 			//MouvementX only
 			return (driveBase.getDisplacementX() > this.distanceInInchX);

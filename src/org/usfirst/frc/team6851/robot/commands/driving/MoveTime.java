@@ -12,10 +12,10 @@ public class MoveTime extends CommandBase {
 	private double distanceToFinishLeft;
 	private double speedX;
 	private double speedY;
-	private long Time;
+	private double Time;
 	private double EndTime;
 	
-	public MoveTime(double speedX, double speedY, long Time) {
+	public MoveTime(double speedX, double speedY, double Time) {
 		requires(driveBase);
 		this.speedX = speedX;
 		this.speedY = speedY;
@@ -26,21 +26,21 @@ public class MoveTime extends CommandBase {
 	protected void initialize() {
 		Dashboard.nextAutonomousStep();
 		super.initialize();
-		this.EndTime = Timer.getFPGATimestamp()+this.Time;
-		this.distanceToFinishRight = driveBase.getRightEncoderDistance() + distanceInRotation;
-		this.distanceToFinishLeft = driveBase.getLeftEncoderDistance() + distanceInRotation;
+		this.EndTime = System.currentTimeMillis()+this.Time*1000;
+		//this.distanceToFinishRight = driveBase.getRightEncoderDistance() + distanceInRotation;
+		//this.distanceToFinishLeft = driveBase.getLeftEncoderDistance() + distanceInRotation;
 	}
 	
 	@Override
 	protected void execute() {
 		
 		driveBase.drive(speedX, speedY);
-//		Dashboard.updateAutonomousStep("Moving at " + s);
+		Dashboard.updateAutonomousStep("Moving at X: " + speedX + "MoveY:" + speedY);
 	}
 	@Override
 	protected boolean isFinished() {
 //		WaitCommand(Time);
-		if (Timer.getFPGATimestamp()>this.EndTime) { 
+		if (System.currentTimeMillis()>this.EndTime) { 
 			return true;	
 		} else {
 			return false;
@@ -48,7 +48,7 @@ public class MoveTime extends CommandBase {
 	}
 	@Override
 	protected void end() {
-		driveBase.drive(speedX, speedY);     
+		driveBase.drive(0.0, 0.0);     
 	}
 
 }

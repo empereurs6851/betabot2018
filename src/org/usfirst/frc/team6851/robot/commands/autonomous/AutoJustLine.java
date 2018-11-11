@@ -23,7 +23,7 @@ public class AutoJustLine extends AutonomousCommand {
 		i=0;
 //		while (i<10)  {
 		addSequential(new AvancerPelle());
-//		addSequential(new WaitCommand(0.5));
+		addSequential(new WaitCommand(0.5));
 		addSequential(new MonterPelle());
 //		addSequential(new WaitCommand(0.5));
 //		addSequential(new ReculerPelle());
@@ -32,15 +32,15 @@ public class AutoJustLine extends AutonomousCommand {
 //		addSequential(new WaitCommand(0.5));
 //		i++;
 //		}
-		addSequential(new MoveTime(MoveSpeedMiddle, 0, 5)); //avance
+//		addSequential(new MoveTime(MoveSpeedMiddle, 0, 5)); //avance
 //		addSequential(new WaitCommand(5));
-		addSequential(new MoveTime(0, -MoveSpeedLow, 1)); // tourne a gauche
+//		addSequential(new MoveTime(0, -MoveSpeedLow, 1)); // tourne a gauche
 //		addSequential(new WaitCommand(5));
-		addSequential(new MoveTime(MoveSpeedMiddle, 0, 5));  // avance
+//		addSequential(new MoveTime(MoveSpeedMiddle, 0, 5));  // avance
 //		addSequential(new WaitCommand(5));
-		addSequential(new MoveTime(0, MoveSpeedMiddle, 1)); // tourne a droite
+//		addSequential(new MoveTime(0, MoveSpeedMiddle, 1)); // tourne a droite
 //		addSequential(new WaitCommand(5));
-		addSequential(new MoveTime(MoveSpeedFast, 0, 5));  // avance
+//		addSequential(new MoveTime(MoveSpeedFast, 0, 5));  // avance
 //		addSequential(new WaitCommand(5));
 //		addSequential(new MoveTime(0, 0, 0));
 //		addSequential(new TurnRobotCommand(-45 * angleFactor, MoveSpeedFast));
