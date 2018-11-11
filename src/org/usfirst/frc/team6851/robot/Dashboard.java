@@ -35,8 +35,9 @@ public class Dashboard {
 		SmartDashboard.putData("Auto RLR mode", RLRChooser);
 		SmartDashboard.putData("Auto LLL mode", LLLChooser);
 		SmartDashboard.putData("Auto RRR mode", RRRChooser);
-		
-
+	
+		AddToAutos("Move To Center Carrot", new AutoMoveToCenterCarrot(false));
+/*
 		AddToAutos("An-Side go to Switch throw near", new AutoASwitchNearThenPCZone(false));
 		AddToAutos("Am-Side go to Switch throw in middle", new AutoASwitchCenter(false));
 		AddToAutos("Af-Side go to Switch throw far", new AutoASwitchFarThenPlatZone(false));
@@ -58,7 +59,7 @@ public class Dashboard {
 		AddToAutos("Do nothing", new AutoJustLine(false));
 		
 		//AddToAutos("DANCE", new AutoDance(false));
-
+*/
 		
 		resetAutonomousSteps();
 	}
