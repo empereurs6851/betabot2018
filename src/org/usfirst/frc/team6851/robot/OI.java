@@ -11,6 +11,9 @@ import java.util.ArrayList;
 
 import org.usfirst.frc.team6851.robot.commands.CancelAllCommandsCommand;
 import org.usfirst.frc.team6851.robot.commands.claw.DescendrePelle;
+import org.usfirst.frc.team6851.robot.commands.claw.AvancerPelle;
+import org.usfirst.frc.team6851.robot.commands.claw.ReculerPelle;
+import org.usfirst.frc.team6851.robot.commands.claw.SetGrabber;
 //import org.usfirst.frc.team6851.robot.commands.claw.SetGrabberDown;
 import org.usfirst.frc.team6851.robot.commands.claw.MonterPelle;
 import org.usfirst.frc.team6851.robot.commands.driving.SmashTheWallForJohn;
@@ -70,9 +73,11 @@ public class OI {
 		getButton(GamepadButton.RB).toggleWhenActive(new ToggleDriveDirectionCommand());
 		//getButton(GamepadButton.Start).toggleWhenActive(new ToggleNavxNavigationCommand());
 
-		getButton(GamepadButton.X).whenPressed(new MonterPelle());
-		getButton(GamepadButton.Y).whenPressed(new DescendrePelle());
-		getButton(GamepadButton.A).toggleWhenPressed(new SmashTheWallForJohn());
+		getButton(GamepadButton.Y).whenPressed(new MonterPelle());
+		getButton(GamepadButton.A).whenPressed(new DescendrePelle());
+		getButton(GamepadButton.B).whenPressed(new AvancerPelle());
+		getButton(GamepadButton.X).whenPressed(new ReculerPelle());
+		//getButton(GamepadButton.).toggleWhenPressed(new SmashTheWallForJohn());
 		
 		getButton(GamepadButton.Back).whenPressed(new CancelAllCommandsCommand());
 		
@@ -130,7 +135,7 @@ public class OI {
 	
 	public double getTurnSpeed() {
 		
-		double speed = rotateInput.getInput();
+		double speed = rotateInput.getInput()*-1;
 		speed = Math.signum(speed) * speed * speed; // Control of the speed from a linear to a exponential curve.
 		
 		return speed*driveSpeedFactor;

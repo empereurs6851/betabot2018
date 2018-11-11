@@ -3,6 +3,7 @@ package org.usfirst.frc.team6851.robot;
 import org.usfirst.frc.team6851.robot.commands.CommandBase;
 import org.usfirst.frc.team6851.robot.commands.autonomous.*;
 import org.usfirst.frc.team6851.robot.commands.claw.ForceRaiseGrabber;
+import org.usfirst.frc.team6851.robot.commands.oldAuto.AutoDance;
 import org.usfirst.frc.team6851.robot.subsystems.DriveBase;
 import org.usfirst.frc.team6851.robot.utils.SmarterDashboard;
 
@@ -35,8 +36,9 @@ public class Dashboard {
 		SmartDashboard.putData("Auto RLR mode", RLRChooser);
 		SmartDashboard.putData("Auto LLL mode", LLLChooser);
 		SmartDashboard.putData("Auto RRR mode", RRRChooser);
-		
-
+	
+		AddDefaultToAutos("Move To Center Carrot", new AutoMoveToCenterCarrot(false));
+/*
 		AddToAutos("An-Side go to Switch throw near", new AutoASwitchNearThenPCZone(false));
 		AddToAutos("Am-Side go to Switch throw in middle", new AutoASwitchCenter(false));
 		AddToAutos("Af-Side go to Switch throw far", new AutoASwitchFarThenPlatZone(false));
@@ -58,7 +60,7 @@ public class Dashboard {
 		AddToAutos("Do nothing", new AutoJustLine(false));
 		
 		//AddToAutos("DANCE", new AutoDance(false));
-
+*/
 		
 		resetAutonomousSteps();
 	}
@@ -82,6 +84,9 @@ public class Dashboard {
 		SmartDashboard.putNumber("Gyro angle", drivebase.getOrientation());
 		SmartDashboard.putBoolean("navx isCalibrating", drivebase.isCalibrating());
 		SmartDashboard.putBoolean("Navx Angle Correction", drivebase.correctOrientationWithNavx);
+		
+		SmartDashboard.putNumber("Displacement X", drivebase.getDisplacementX());
+		SmartDashboard.putNumber("Displacement Y", drivebase.getDisplacementY());
 		
 /*
 		SmartDashboard.putNumber("Screw Height", CommandBase.grabber.getScrewHeight());

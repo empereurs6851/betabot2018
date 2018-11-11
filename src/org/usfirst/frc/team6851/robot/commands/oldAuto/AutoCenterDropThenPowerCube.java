@@ -16,7 +16,7 @@ public class AutoCenterDropThenPowerCube extends AutonomousCommand {
 		addSequential(new MoveDistance(3*12, MoveSpeedFast));
 		addSequential(new TurnRobotCommand(90 * angleFactor, MoveSpeedFast));
 
-//		addSequential(new MoveUntilNearWall(Constant.BUMPER_PROFONDEUR, MoveSpeedFast));
+		//addSequential(new MoveUntilNearWall(Constant.BUMPER_PROFONDEUR, MoveSpeedFast));
 		addSequential(new MonterPelle());
 		
 
