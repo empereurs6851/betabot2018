@@ -18,6 +18,9 @@ import org.usfirst.frc.team6851.robot.commands.claw.SetGrabber;
 import org.usfirst.frc.team6851.robot.commands.claw.MonterPelle;
 import org.usfirst.frc.team6851.robot.commands.driving.SmashTheWallForJohn;
 import org.usfirst.frc.team6851.robot.commands.driving.ToggleDriveDirectionCommand;
+import org.usfirst.frc.team6851.robot.commands.driving.TogglePelleAvantArriere;
+import org.usfirst.frc.team6851.robot.commands.driving.TogglePelleMouvementComplet;
+import org.usfirst.frc.team6851.robot.commands.driving.TogglePelleUpDown;
 import org.usfirst.frc.team6851.robot.commands.driving.ToggleSlowerMoveCommand;
 import org.usfirst.frc.team6851.robot.utils.Extreme3DPro.Extreme3DProButton;
 import org.usfirst.frc.team6851.robot.utils.Gamepad.GamepadAxis;
@@ -73,10 +76,10 @@ public class OI {
 		getButton(GamepadButton.RB).toggleWhenActive(new ToggleDriveDirectionCommand());
 		//getButton(GamepadButton.Start).toggleWhenActive(new ToggleNavxNavigationCommand());
 
-		getButton(GamepadButton.Y).whenPressed(new MonterPelle());
-		getButton(GamepadButton.A).whenPressed(new DescendrePelle());
-		getButton(GamepadButton.B).whenPressed(new AvancerPelle());
-		getButton(GamepadButton.X).whenPressed(new ReculerPelle());
+		getButton(GamepadButton.Y).whenPressed(new TogglePelleUpDown());
+		getButton(GamepadButton.A).whenPressed(new TogglePelleAvantArriere());
+//		getButton(GamepadButton.B).whenPressed(new AvancerPelle());
+		getButton(GamepadButton.X).whenPressed(new TogglePelleMouvementComplet());
 		//getButton(GamepadButton.).toggleWhenPressed(new SmashTheWallForJohn());
 		
 		getButton(GamepadButton.Back).whenPressed(new CancelAllCommandsCommand());
