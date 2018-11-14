@@ -59,8 +59,8 @@ public class DriveBase extends SubsystemBase {
 		//System.out.println("Je resoir de " + moveValue + ", " + rotateValue);
 		
 		//TODO JP : Try to use NavX here
-		if (correctOrientationWithNavx)
-			//rotateValue = correctRotationWithEncoders(moveValue, rotateValue);
+		//if (correctOrientationWithNavx)
+			rotateValue = correctRotationWithNavX(moveValue, rotateValue);
 		drive.arcadeDrive(moveValue, rotateValue);
 	}
 
