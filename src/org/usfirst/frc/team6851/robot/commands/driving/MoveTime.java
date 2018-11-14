@@ -39,7 +39,7 @@ public class MoveTime extends CommandBase {
 	@Override
 	protected void execute() {
 		if (this.RotationAngle == 0) {
-			this.speedY=this.speedY+((this.AngleDepart-driveBase.getOrientation())/(500*this.speedX));
+			this.speedY = this.speedY+((this.AngleDepart-driveBase.getOrientation())/(500*this.speedX));
 		}	
 		driveBase.drive(this.speedX, this.speedY);
 		Dashboard.updateAutonomousStep("Moving at X: " + this.speedX + "MoveY:" + this.speedY);

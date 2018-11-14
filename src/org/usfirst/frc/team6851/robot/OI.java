@@ -76,7 +76,7 @@ public class OI {
 		getButton(GamepadButton.RB).toggleWhenActive(new ToggleDriveDirectionCommand());
 		//getButton(GamepadButton.Start).toggleWhenActive(new ToggleNavxNavigationCommand());
 
-		getButton(GamepadButton.Y).whenPressed(new MonterPelle());
+		getButton(GamepadButton.Y).whenPressed(new TogglePelleUpDown());
 		getButton(GamepadButton.A).whenPressed(new TogglePelleMouvementComplet());
 		getButton(GamepadButton.B).whenPressed(new TogglePelleAvantArriere());
 		getButton(GamepadButton.X).whenPressed(new TogglePelleUpDown());
